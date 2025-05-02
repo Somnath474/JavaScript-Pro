@@ -49,14 +49,15 @@ function checkAns(idx) {
         }
     } else {
         document.body.style.backgroundColor = "red";
+        let finalScore = level;
 
-        if (level > highestScore) {
-            highestScore = level;
+        if (finalScore > highestScore) {
+            highestScore = finalScore;
         }
 
         setTimeout(() => {
             document.body.style.backgroundColor = "";
-            h2.innerHTML = `Game Over! Your score was <b>${level}</b><br>Highest Score: <b>${highestScore}</b><br>Press any key to restart`;
+            h2.innerHTML = `Game Over! Your score was <b>${finalScore}</b><br>Highest Score: <b>${highestScore}</b><br>Press any key to restart`;
         }, 200);
 
         resetGame();
